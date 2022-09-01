@@ -1,20 +1,23 @@
 @extends('layout.master')
 
 @section('title')
-Halaman Utama
-@endsection
-
-@section('keterangan')
-    katergori
-@endsection
-
-@section('user')
-    <p>Aditio Hidayatulloh</p>
+<h1 class="text-primary">Selamat Datang</h1>
 @endsection
 
 @section('content')
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Eligendi ipsa exercitationem officia similique quidem ullam neque,
-         possimus dicta labore atque iure praesentium facere enim excepturi adipisci reprehenderit
-         veniam explicabo minima.</p>
+<div class="card">
+    <div class="card-header">
+    <h3 class="text-primary">Forum untuk menanyakan apa saja yang sedang kalian pikirkan</h3>
+    </div>
+    <div class="card-body">
+        <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, recusandae accusantium,
+             nisi unde repellendus facere rerum aspernatur in reiciendis eligendi beatae sit porro magnam.
+              Maxime iste qui dolores iure magnam.</h3>
+
+        <a href="/pertanyaan/create"><button class="btn btn-secondary my-3">Buat Pertanyaan</button></a>
+        </div>
+
+</div>
+
+</div>
 @endsection

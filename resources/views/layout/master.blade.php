@@ -67,15 +67,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">@yield('user')</h4>
-                            </div>
-                            <div class="card-body">
-                                @yield('content')
-                            </div>
-
-                        </div>
+                        @yield('content')
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PertanyaanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+
+// Route CRUD Pertanyaan
+Route::resource('pertanyaan', PertanyaanController::class);

@@ -3,7 +3,7 @@
                 <ul class="metismenu" id="menu">
                     <!-- <li><a href="index.html"><i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                     </li> -->
-                    <li><a href="javascript:void()">
+                    <li><a href="/">
                         <i class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                     </li>
 
@@ -11,7 +11,7 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-world-2"></i><span class="nav-text">Lihat Pertanyaan</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="{{asset('/tempate/app-profile.html')}}">Lihat Semua Pertanyaan</a></li>
+                            <li><a href="/pertanyaan">Lihat Semua Pertanyaan</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan katergori</a>
                                 <ul aria-expanded="false">
                                     <li><a href="./email-compose.html">Kategori 1</a></li>
@@ -22,6 +22,7 @@
 
                         </ul>
                     </li>
+
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text">Kategori</span></a>
                         <ul aria-expanded="false">
