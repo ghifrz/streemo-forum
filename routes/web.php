@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PertanyaanController;
+use App\Http\Controllers\KategoriController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,6 @@ Route::get('/', function () {
 
 // Route CRUD Pertanyaan
 Route::resource('pertanyaan', PertanyaanController::class);
+
+// Route CRUD Kategori
+Route::resource('kategori', KategoriController::class);

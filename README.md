@@ -9,4 +9,6 @@ Tema Project
 
 Forum Tanya Jawab
 
-![Semantic description of image](/images/ERD.png "ERD")
+ERD :
+
+![Semantic description of image](/public/images/ERD.png "ERD")

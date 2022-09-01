@@ -26,8 +26,8 @@
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="icon icon-app-store"></i><span class="nav-text">Kategori</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="./chart-flot.html">Lihat Kategori</a></li>
-                            <li><a href="./chart-morris.html">Tambah Kategori</a></li>
+                            <li><a href="/kategori">Lihat Daftar Kategori</a></li>
+                            <li><a href="/kategori/create">Tambah Kategori</a></li>
                         </ul>
                     </li>
 

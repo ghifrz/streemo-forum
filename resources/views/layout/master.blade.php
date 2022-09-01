@@ -11,6 +11,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/template/images/favicon.png')}}">
     <link href="{{asset('/template/css/style.css')}}" rel="stylesheet">
 
+    @stack('styles')
+
 </head>
 
 <body>
@@ -113,6 +115,8 @@
 
     <script src="{{asset('/template/vendor/highlightjs/highlight.pack.min.js')}}"></script>
     <!-- Circle progress -->
+
+    @stack('scripts')
 
 </body>
 

@@ -1,5 +1,5 @@
 <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="/" class="brand-logo">
                 <img class="logo-abbr" src="{{asset('/template/images/logo.png')}}">
                 <img class="logo-compact" src="{{asset('/template/images/logo-text.png')}}">
                 <img class="brand-title" src="{{asset('/template/images/logo-text.png')}}">
