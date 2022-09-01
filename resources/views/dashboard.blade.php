@@ -4,6 +4,14 @@
 Halaman Utama
 @endsection
 
+@section('keterangan')
+    katergori
+@endsection
+
+@section('user')
+    <p>Aditio Hidayatulloh</p>
+@endsection
+
 @section('content')
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
          Eligendi ipsa exercitationem officia similique quidem ullam neque,
