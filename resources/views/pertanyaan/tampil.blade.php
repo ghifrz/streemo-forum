@@ -17,15 +17,15 @@
     <div class="card-body">
         <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
         <h3>{{$item->teks}}</h3>
-        
-        <form action="/pertanyaan/{{$item->id}}" method="post">
+        <div class="d-flex justify-content-start">
+            <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
+            <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
+            <form action="/pertanyaan/{{$item->id}}" method="post">
             @csrf
             @method('delete')
-            <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary my-3">Lihat Pertanyaan</button></a>
-            <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info my-3">Edit Pertanyaan</button></a>
-        <input type="submit" value="Delete" class="btn btn-danger btn-flex btn-sm my-3">
-        </form>
-
+            <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
+            </form>
+        </div>
     </div>
     </div>
     @endforeach

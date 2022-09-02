@@ -82,7 +82,10 @@ class PertanyaanController extends Controller
      */
     public function show($id)
     {
-        //
+        $pertanyaan = Pertanyaan::find($id);
+        $katergori =Kategori::all();
+
+        return view('pertanyaan.detail',['pertanyaan'=>$pertanyaan,'kategori'=>$katergori]);
     }
 
     /**

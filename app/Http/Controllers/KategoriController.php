@@ -18,7 +18,7 @@ class KategoriController extends Controller
 
     public function index()
     {
-        $kategori = DB::table('kategori')->get();
+        $kategori =Kategori::all();
         return view('kategori.tampil', ['kategori' => $kategori]);
     }
 
@@ -51,10 +51,12 @@ class KategoriController extends Controller
             'nama.min' => "Minimal 2 karakter"
         ]);
 
-        DB::table('kategori')->insert([
-            'nama' => $request['nama'],
-            'deskripsi' => $request['deskripsi']
-        ]);
+        $kategori = new Kategori;
+
+        $kategori ->nama =$request->nama;
+        $kategori ->deskripsi= $request->deskripsi;
+
+        $kategori->save();
 
         return redirect('/kategori');
     }
@@ -67,8 +69,7 @@ class KategoriController extends Controller
      */
     public function show($id)
     {
-        $kategori = DB::table('kategori')->where('id', $id)->first();
-
+        $kategori =Kategori::find($id);
         return view('kategori.detail', ['kategori'=>$kategori]);
     }
 
@@ -80,8 +81,7 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        $kategori = DB::table('kategori')->where('id', $id)->first();
-
+        $kategori = Kategori::find($id);
         return view('kategori.edit', ['kategori'=>$kategori]);
     }
 
@@ -104,14 +104,15 @@ class KategoriController extends Controller
             'nama.min' => "Minimal 2 karakter"
         ]);
 
-        DB::table('kategori')
-            ->where('id', $id)
-            ->update(
-                [
-                    'nama' => $request['nama'],
-                    'deskripsi' => $request['deskripsi']
-                ]
-            );
+
+        $kategori = new Kategori;
+
+        $kategori = Kategori::find($id);
+
+        $kategori ->nama =$request->nama;
+        $kategori ->deskripsi= $request->deskripsi;
+
+        $kategori->save();
         return redirect('/kategori');
     }
 
@@ -123,7 +124,9 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('kategori')->where('id', '=', $id)->delete();
+        $kategori = Kategori::find($id);
+
+        $kategori->delete();
 
         return redirect('/kategori');
     }
