@@ -15,11 +15,7 @@
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan katergori</a>
                                 <ul aria-expanded="false">
 
-                               @forelse ($kategori as $item)
-                                <li><a href="#">{{$item->nama}}</a></li>
-                                @empty
-                                tidak ada kategori
-                                @endforelse
+                               
 
                                 </ul>
                             </li>

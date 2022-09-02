@@ -37,7 +37,7 @@
     @enderror
 
     <input type=file name="gambar" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
-    <img id="pic" />
+<img id="pic" />
     @error('gambar')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
