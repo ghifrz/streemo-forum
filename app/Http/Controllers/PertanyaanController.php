@@ -50,7 +50,7 @@ class PertanyaanController extends Controller
             'teks.required' =>"pertanyaan tidak boleh kosong",
             'kategori_id.required' =>"Silahkan pilih kategori",
             'gambar.mimes' => "Gambar Harus Berupa jpg,jpeg,atau png",
-            'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048"
+            'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048 MB"
         ]);
 
         $namaGambar = time().'.'.$request->gambar->extension();

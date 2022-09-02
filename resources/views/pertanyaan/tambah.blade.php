@@ -36,18 +36,14 @@
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
-    <div class="form-group">
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" name="gambar">
-                <label class="custom-file-label" >Pilih Gambar</label>
-        </div>
-    </div>
+    <input type=file name="gambar" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
+    <img id="pic" />
     @error('gambar')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 
         <div class="form-group">
-        <h3 class="label mt-3">Masukan Pertanyaan Disini</h3>
+        <h3 class="label mt-3">Masukkan Pertanyaan Disini</h3>
         <textarea class="form-control" name="teks" rows="4" id="comment">{{old('text')}}</textarea>
         </div>
 
