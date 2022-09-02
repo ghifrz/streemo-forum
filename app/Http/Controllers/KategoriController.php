@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Kategori;
+
 
 class KategoriController extends Controller
 {
@@ -13,10 +14,11 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         $kategori = DB::table('kategori')->get();
-
         return view('kategori.tampil', ['kategori' => $kategori]);
     }
 
@@ -27,7 +29,8 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        return view('Kategori.tambah');
+        $kategori = Kategori::all();
+        return view('kategori.tambah',['kategori'=>$kategori]);
     }
 
     /**
@@ -79,7 +82,7 @@ class KategoriController extends Controller
     {
         $kategori = DB::table('kategori')->where('id', $id)->first();
 
-        return view('kategori.edit', ['kategori'=>$kategori]);  
+        return view('kategori.edit', ['kategori'=>$kategori]);
     }
 
     /**

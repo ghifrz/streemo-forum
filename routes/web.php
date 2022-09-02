@@ -15,9 +15,8 @@ use App\Http\Controllers\KategoriController;
 */
 // test bot gitlab
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/',[PertanyaanController::class,'dashboard']);
+
 
 // Route CRUD Pertanyaan
 Route::resource('pertanyaan', PertanyaanController::class);

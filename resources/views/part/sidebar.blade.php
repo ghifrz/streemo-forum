@@ -14,9 +14,13 @@
                             <li><a href="/pertanyaan">Lihat Semua Pertanyaan</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan katergori</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="./email-compose.html">Kategori 1</a></li>
-                                    <li><a href="./email-inbox.html">Katergori 2</a></li>
-                                    <li><a href="./email-read.html">Kategori 3</a></li>
+
+                               @forelse ($kategori as $item)
+                                <li><a href="#">{{$item->nama}}</a></li>
+                                @empty
+                                tidak ada kategori
+                                @endforelse
+
                                 </ul>
                             </li>
 
