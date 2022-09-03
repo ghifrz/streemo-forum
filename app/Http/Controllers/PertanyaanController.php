@@ -72,7 +72,7 @@ class PertanyaanController extends Controller
 
         $pertanyaan ->save();
 
-        Alert::success('Berhasil', 'Berhasil Menambahkan diskusi baru');
+        Alert::success('Berhasil', 'Berhasil Menambahkan Pertanyaan Baru');
         return redirect('/pertanyaan');
     }
 
@@ -123,7 +123,7 @@ class PertanyaanController extends Controller
             'teks.required' =>"pertanyaan tidak boleh kosong",
             'kategori_id.required' =>"Silahkan pilih kategori",
             'gambar.mimes' => "Gambar Harus Berupa jpg,jpeg,atau png",
-            'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048"
+            'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048 MB"
         ]);
 
         $pertanyaan = Pertanyaan::find($id);

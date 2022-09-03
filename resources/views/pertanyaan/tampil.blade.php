@@ -12,21 +12,23 @@
 
 <div class="card d-flex">
     <div class="card-header">
-        <h3 class="text-primary">Diskusi baru oleh, {{Auth::user()->name}}</h3>
-    </div>
-    <div class="card-body">
-        <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
-        <h3>{{$item->judul}}</h3>
-        <div class="d-flex justify-content-start">
-            <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
-            <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
-            <form action="/pertanyaan/{{$item->id}}" method="post">
-            @csrf
-            @method('delete')
-            <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
-            </form>
+            <h3 class="text-primary">Coba lihat Pertanyaan ini, {{Auth::user()->name}}</h3>
+            <span class="badge badge-info">{{$item->kategori->nama}}</span>
         </div>
-    </div>
+        <div class="card-body">
+            <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
+            <h3>{{$item->judul}}</h3>
+            <div class="d-flex justify-content-start">
+                <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
+                <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
+                <form action="/pertanyaan/{{$item->id}}" method="post">
+                @csrf
+                @method('delete')
+                <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
+                </form>
+                
+            </div>
+        </div>
     </div>
     @endforeach
 </div>
