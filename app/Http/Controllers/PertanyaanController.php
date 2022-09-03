@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 use App\Models\Pertanyaan;
 use File;
@@ -71,6 +72,7 @@ class PertanyaanController extends Controller
 
         $pertanyaan ->save();
 
+        Alert::success('Berhasil', 'Berhasil Menambahkan diskusi baru');
         return redirect('/pertanyaan');
     }
 
@@ -145,6 +147,7 @@ class PertanyaanController extends Controller
 
         $pertanyaan->save();
 
+        Alert::success('Berhasil', 'Berhasil Mengupdate Pertanyaan');
         return redirect('/pertanyaan');
 
     }

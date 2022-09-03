@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 
 
@@ -58,6 +58,7 @@ class KategoriController extends Controller
 
         $kategori->save();
 
+        Alert::success('Berhasil', 'Berhasil Menambahkan Kategori Baru');
         return redirect('/kategori');
     }
 
@@ -113,6 +114,8 @@ class KategoriController extends Controller
         $kategori ->deskripsi= $request->deskripsi;
 
         $kategori->save();
+
+        Alert::success('Berhasil', 'Berhasil Mengupdate Data Kategori');
         return redirect('/kategori');
     }
 

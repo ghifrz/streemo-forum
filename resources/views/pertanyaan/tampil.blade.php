@@ -6,7 +6,7 @@
 
 @section('content')
 
-<a href="/pertanyaan/create"><button class="btn btn-secondary mb-3">Buat Pertanyaan</button></a>
+<a href="/pertanyaan/create"><button class="btn btn-secondary ml-3 mb-3">Buat Pertanyaan Baru</button></a>
 
 @foreach ($pertanyaan as $item)
 

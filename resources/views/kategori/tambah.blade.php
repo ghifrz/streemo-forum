@@ -23,6 +23,7 @@
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
     <button type="submit" class="btn btn-primary">Tambah</button>
+    <a href="/dashboard" class="btn btn-secondary">Batal</a>
   </form>
 
 @endsection

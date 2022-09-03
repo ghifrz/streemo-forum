@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\Profile;
 
@@ -39,6 +41,7 @@ class ProfileController extends Controller
 
         $profile->save();
 
-        return redirect('/pertanyaan');
+        Alert::success('Berhasil', 'Berhasil Mengupdate Data Profil');
+        return redirect('/dashboard');
     }
 }

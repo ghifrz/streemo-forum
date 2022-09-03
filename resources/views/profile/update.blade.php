@@ -37,7 +37,8 @@
     @error('biodata')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-    <button type="submit" class="btn btn-primary mb-5">Tambah</button>
+    <button type="submit" class="btn btn-primary mb-4 mr-2">Simpan</button>
+    <a href="/dashboard" class="btn btn-secondary mb-4">Batal</a>
   </form>
 
 @endsection
