@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,7 @@ use App\Http\Controllers\KategoriController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 // test bot gitlab
 Route::get('/', function () {
     return view('auth.login');
@@ -26,6 +28,9 @@ Route::resource('pertanyaan', PertanyaanController::class);
 
 // Route CRUD Kategori
 Route::resource('kategori', KategoriController::class);
+
+// Route Edit Profile
+Route::resource('profile', ProfileController::class)->only('index', 'update');
 
 Auth::routes();
 

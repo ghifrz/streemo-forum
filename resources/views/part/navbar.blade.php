@@ -45,7 +45,7 @@
                                     {{ Auth::user()->email }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./app-profile.html" class="dropdown-item">
+                                    <a href="/profile" class="dropdown-item">
                                         <i class="icon-user"></i>
                                         <span class="ml-2">Profile </span>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
