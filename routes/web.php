@@ -14,8 +14,11 @@ use App\Http\Controllers\KategoriController;
 |
 */
 // test bot gitlab
+Route::get('/', function () {
+    return view('auth.login');
+});
 
-Route::get('/',[PertanyaanController::class,'dashboard']);
+Route::get('/dashboard',[PertanyaanController::class,'dashboard']);
 
 
 // Route CRUD Pertanyaan
@@ -23,3 +26,6 @@ Route::resource('pertanyaan', PertanyaanController::class);
 
 // Route CRUD Kategori
 Route::resource('kategori', KategoriController::class);
+
+Auth::routes();
+

@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-<h1 class="text-primary">Selamat Datang</h1>
+<h1 class="text-primary">Selamat Datang {{Auth::user()->name}}</h1>
 @endsection
 
 @section('content')

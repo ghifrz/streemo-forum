@@ -12,11 +12,11 @@
 
 <div class="card d-flex">
     <div class="card-header">
-        <h3 class="text-primary">{{$item->judul}}</h3>
+        <h3 class="text-primary">{{Auth::user()->email}}</h3>
     </div>
     <div class="card-body">
         <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
-        <h3>{{$item->teks}}</h3>
+        <h3>{{$item->judul}}</h3>
         <div class="d-flex justify-content-start">
             <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
             <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
