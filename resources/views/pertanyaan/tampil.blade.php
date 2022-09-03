@@ -12,7 +12,7 @@
 
 <div class="card d-flex">
     <div class="card-header">
-        <h3 class="text-primary">{{Auth::user()->email}}</h3>
+        <h3 class="text-primary">Diskusi baru oleh, {{Auth::user()->name}}</h3>
     </div>
     <div class="card-body">
         <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">

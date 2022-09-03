@@ -58,12 +58,12 @@
 
                             <div class="col-md-6">
                                <textarea name="alamat" id="" class="form-control @error('alamat') is-invalid @enderror"></textarea>
+                               @error('alamat')
+                                       <span class="invalid-feedback" role="alert">
+                                           <strong>{{ $message }}</strong>
+                                       </span>
+                                   @enderror
                             </div>
-                            @error('alamat')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                         </div>
 
                         <div class="row mb-3">
@@ -71,12 +71,12 @@
 
                             <div class="col-md-6">
                                <textarea name="biodata" id="" class="form-control @error('alamat') is-invalid @enderror"></textarea>
+                               @error('biodata')
+                                       <span class="invalid-feedback" role="alert">
+                                           <strong>{{ $message }}</strong>
+                                       </span>
+                                   @enderror
                             </div>
-                            @error('biodata')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                         </div>
 
                         <div class="row mb-3">

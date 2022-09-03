@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-<h1 class="text-primary">Selamat Datang {{Auth::user()->name}}</h1>
+    <h1 class="text-primary">Selamat Datang, {{Auth::user()->name}}.</h1>
 @endsection
 
 @section('content')
@@ -14,7 +14,8 @@
              nisi unde repellendus facere rerum aspernatur in reiciendis eligendi beatae sit porro magnam.
               Maxime iste qui dolores iure magnam.</h3>
 
-        <a href="/pertanyaan/create"><button class="btn btn-secondary my-3">Buat Pertanyaan</button></a>
+        <a href="/pertanyaan/create"><button class="btn btn-secondary my-3">Buat Diskusi Baru</button></a>
+        <a href="/pertanyaan"><button class="btn btn-primary my-3">Lihat Semua Diskusi</button></a>
         </div>
 
 </div>
