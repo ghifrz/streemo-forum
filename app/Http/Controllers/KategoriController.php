@@ -62,6 +62,7 @@ class KategoriController extends Controller
 
         $kategori->save();
 
+        Alert::success('Berhasil', 'Berhasil Menambahkan Kategori Baru');
 
         return redirect('/kategori');
     }

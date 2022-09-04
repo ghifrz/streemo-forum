@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 use App\Models\Pertanyaan;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use File;
 
 class PertanyaanController extends Controller
@@ -69,18 +69,23 @@ class PertanyaanController extends Controller
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
         $pertanyaan = $namaGambar;
+<<<<<<< HEAD
         }
 
         $iduser = Auth::id();
+=======
+    }
+    
+>>>>>>> 3dfee763fb6010111fa51ae2e163a18e3ffd386f
         $pertanyaan = new Pertanyaan;
-
+    
         $pertanyaan->judul = $request->judul;
         $pertanyaan->teks = $request->teks;
         $pertanyaan->kategori_id  = $request->kategori_id;
 
         $pertanyaan ->save();
 
-        Alert::success('Berhasil', 'Berhasil Mengupdate Pertanyaan');
+        Alert::success('Berhasil', 'Berhasil Menambah Pertanyaan');
         return redirect('/pertanyaan');
     }
 
