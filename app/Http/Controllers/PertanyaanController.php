@@ -68,9 +68,10 @@ class PertanyaanController extends Controller
         if($request->has('gambar')){
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
-        $pertanyaan->gambar = $namaGambar;
+        $pertanyaan = $namaGambar;
         }
 
+        $iduser = Auth::id();
         $pertanyaan = new Pertanyaan;
 
         $pertanyaan->judul = $request->judul;
