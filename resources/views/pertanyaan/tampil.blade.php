@@ -12,7 +12,7 @@
 
 <div class="card d-flex">
     <div class="card-header">
-            <h3 class="text-primary"> {{Auth::user()->email}}</h3>
+            <h3 class="text-primary"> {{Auth::user()->name}}</h3>
             <span class="badge badge-info">{{$item->kategori->nama}}</span>
         </div>
         <div class="card-body">

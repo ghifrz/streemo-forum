@@ -9,9 +9,18 @@
 <form action="/profile/{{$profile->id}}" method="POST">
     @csrf
     @method('put')
+
+    <div class="form-group">
+      <label>Nama</label>
+      <input name="nama" type="text" value="{{old('name', $profile->user->name)}}" disabled class="form-control">
+    </div>
+    @error('email')
+        <div class="alert alert-danger">{{ $message }}</div>
+    @enderror
+
     <div class="form-group">
       <label>Email</label>
-      <input name="email" type="text" value="{{old('email', $profile->email)}}" class="form-control">
+      <input name="email" type="email" value="{{old('email', $profile->user->email)}}" disabled class="form-control">
     </div>
     @error('email')
         <div class="alert alert-danger">{{ $message }}</div>

@@ -16,9 +16,9 @@ class CreateJawabanTable extends Migration
         Schema::create('jawaban', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users')->onUpdate('cascade');
+            $table->foreign('users_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('pertanyaan_id');
-            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan')->onUpdate('cascade');
+            $table->foreign('pertanyaan_id')->references('id')->on('pertanyaan')->onUpdate('cascade')->onDelete('cascade');
             $table->text('teks');
             $table->timestamps();
         });

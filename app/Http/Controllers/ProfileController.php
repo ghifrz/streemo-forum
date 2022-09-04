@@ -20,7 +20,7 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'email' => 'required',
+
             'umur' => 'required',
             'alamat' => 'required',
             'biodata'=>'required'
@@ -34,7 +34,7 @@ class ProfileController extends Controller
 
         $profile = Profile::find($id);
 
-        $profile->email =$request->email;
+
         $profile->umur =$request->umur;
         $profile->alamat =$request->alamat;
         $profile->biodata =$request->biodata;

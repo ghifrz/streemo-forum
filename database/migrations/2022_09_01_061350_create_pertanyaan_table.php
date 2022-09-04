@@ -16,10 +16,10 @@ class CreatePertanyaanTable extends Migration
         Schema::create('pertanyaan', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('gambar');
+            $table->string('gambar')->nullable();
             $table->text('teks');
             $table->unsignedBigInteger('kategori_id');
-            $table->foreign('kategori_id')->references('id')->on('kategori')->onUpdate('cascade');
+            $table->foreign('kategori_id')->references('id')->on('kategori')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

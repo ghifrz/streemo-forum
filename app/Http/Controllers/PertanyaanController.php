@@ -53,7 +53,7 @@ class PertanyaanController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'gambar' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => '|mimes:jpg,jpeg,png|max:2048',
             'teks' => 'required',
             'kategori_id'=>'required'
         ],
@@ -77,7 +77,7 @@ class PertanyaanController extends Controller
 
         $pertanyaan ->save();
 
-        Alert::success('Berhasil', 'Berhasil Menambahkan Pertanyaan Baru');
+
         return redirect('/pertanyaan');
     }
 
