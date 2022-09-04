@@ -41,6 +41,7 @@
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     <i class="mdi mdi-account"></i>
                                 </a>
+                                @auth()
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                                     {{ Auth::user()->email }}
                                 </a>
@@ -54,10 +55,18 @@
                                          <i class="icon-key"></i>
                                          {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                @endauth
+
+                                @guest()
+                                <a class="nav-link" href="/login" role="button">
+                                    Login
+                                </a>
+                                @endguest
+
+
                                 </div>
                             </li>
                         </ul>

@@ -1,7 +1,15 @@
 @extends('layout.master')
 
 @section('title')
+@auth
     <h1 class="text-primary">Selamat Datang, {{Auth::user()->name}}.</h1>
+@endauth
+
+@guest
+<h1 class="text-primary">Selamat Datang,</h1>
+<p> Silahkan login untuk menggunakan layanan forum.</p>
+@endguest
+
 @endsection
 
 @section('content')

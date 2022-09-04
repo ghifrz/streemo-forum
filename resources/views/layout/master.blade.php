@@ -113,8 +113,8 @@
     <!-- Circle progress -->
 
     @stack('scripts')
-    
-    @include('sweetalert::alert')
+
+
 
 </body>
 

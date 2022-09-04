@@ -15,6 +15,11 @@ class PertanyaanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['dashboard']);
+    }
+
     public function dashboard(){
         $kategori = Kategori::all();
         return view('dashboard',['kategori'=>$kategori]);
