@@ -10,6 +10,7 @@ class Pertanyaan extends Model
     use HasFactory;
     protected $table = "pertanyaan";
     protected $fillable =["judul","gambar","teks","kategori_id"];
+    protected $nullable =["gambar"];
 
     public function kategori()
     {

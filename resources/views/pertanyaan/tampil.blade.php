@@ -19,7 +19,6 @@
             @if ($item->gambar !== null)
             <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
             @endif
-
             <h3>{{$item->judul}}</h3>
             <div class="d-flex justify-content-start">
                 <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>

@@ -61,7 +61,7 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            @yield('title')
+                             @yield('title')
                             <p class="mb-0">@yield('keterangan')</p>
                         </div>
                     </div>
@@ -114,6 +114,7 @@
 
     @stack('scripts')
 
+    @include('sweetalert::alert')
 
 
 </body>
