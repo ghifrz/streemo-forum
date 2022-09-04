@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('title')
-<h1 class="text-primary">Selamat Datang</h1>
+<h1 class="text-primary">Tanyakan Apapun Disini</h1>
 @endsection
 
 @section('content')
@@ -16,7 +16,10 @@
             <span class="badge badge-info">{{$item->kategori->nama}}</span>
         </div>
         <div class="card-body">
+            @if ($item->gambar !== null)
             <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
+            @endif
+
             <h3>{{$item->judul}}</h3>
             <div class="d-flex justify-content-start">
                 <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>

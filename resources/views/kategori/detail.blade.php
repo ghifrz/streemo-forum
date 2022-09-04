@@ -1,19 +1,21 @@
 @extends('layout.master')
 
 @section('title')
-<h1 class="text-primary">Detail Kategori</h1>
+<h1 class="text">Detail Kategori</h1>
 @endsection
 
 @section('content')
 
-<h1 class="text-primary">{{$kategori->nama}}</h1>
+<h1 class="text-info">{{$kategori->nama}}</h1>
 <p style="color: black">{{$kategori->deskripsi}}</p>
 
+<h3 class="text-primary mt-5">Lihat Beberapa Pertanyaan Terkait katekgori</h3>
 <div class="row">
+
     @forelse ($kategori->pertanyaan as $item)
         <div class="col-4">
             <div class="card-header">
-                    <h3 class="text-primary">Diskusi baru oleh, {{Auth::user()->name}}</h3>
+                    <h3 class="text-primary"> {{Auth::user()->name}}</h3>
                 </div>
                     <div class="card-body">
                     <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
@@ -26,7 +28,7 @@
                         @method('delete')
                         <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
                         </form> --}}
-                        
+
                     </div>
                 </div>
             </div>

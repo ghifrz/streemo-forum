@@ -49,6 +49,6 @@ class User extends Authenticatable
 
     public function jawaban()
     {
-        return $this->hasMany(Jawaban::class, 'users_id');
+        return $this->hasMany(Jawaban::class, 'pertanyaan_id');
     }
 }

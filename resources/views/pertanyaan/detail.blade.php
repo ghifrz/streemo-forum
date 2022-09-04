@@ -13,7 +13,7 @@
     </div>
     <div class="card-body">
         <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
-        <h3>{{$pertanyaan->teks}}</h3>
+        <h4>{{$pertanyaan->teks}}</h4>
         <div class="d-flex justify-content-start">
             {{-- <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a> --}}
             {{-- <a href="/pertanyaan/{{$pertanyaan->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
