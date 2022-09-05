@@ -18,15 +18,14 @@
 
     @forelse ($kategori->pertanyaan as $item)
         <div class="col-4">
-            <div class="card-header">
-                    <h3 class="text-primary"> {{Auth::user()->name}}</h3>
-                </div>
-                    <div class="card-body">
-                    @if ($item->gambar !== null)
-                    <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
+        <div class="card" style="width: 18rem;">
+        @if ($item->gambar !== null)
+                    <img src="{{asset('/images/'.$item->gambar)}}" width=300px height="300px">
                     @endif
-                    <h3>{{$item->judul}}</h3>
-                    <div class="d-flex justify-content-start">
+         <div class="card-body">
+    <h5 class="card-title">{{$item->judul}}</h5>
+    <p class="card-text">{!!$item->teks!!}</p>
+    <div class="d-flex justify-content-start">
                         <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
                         {{-- <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
                         <form action="/pertanyaan/{{$item->id}}" method="post">
@@ -34,11 +33,10 @@
                         @method('delete')
                         <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
                         </form> --}}
-
+  </div>
+                </div>
                     </div>
                 </div>
-            </div>
-        </div>
     @empty
         <h3>Tidak ada pertanyaan di kategori ini</h3>
     @endforelse
