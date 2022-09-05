@@ -37,5 +37,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/jawaban/{pertanyaan_id}', [JawabanController::class, 'tambah']);
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::post('/pertanyaan/{petanyaan_id}', [PertanyaanController::class, 'create','edit','destroy']);
+});
+
 Auth::routes();
 
