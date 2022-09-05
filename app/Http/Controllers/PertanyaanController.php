@@ -54,7 +54,7 @@ class PertanyaanController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'gambar' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => '|mimes:jpg,jpeg,png|max:2048',
             'teks' => 'required',
             'kategori_id'=>'required'
         ],
@@ -65,25 +65,14 @@ class PertanyaanController extends Controller
             'gambar.mimes' => "Gambar Harus Berupa jpg,jpeg,atau png",
             'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048 MB"
         ]);
-<<<<<<< HEAD
-        if($request->has('gambar')){
-        $namaGambar = time().'.'.$request->gambar->extension();
-        $request->gambar->move(public_path('images'),$namaGambar);
-        $pertanyaan = $namaGambar;
-=======
 
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
-<<<<<<< HEAD
+
+
 
         $pertanyaan = new Pertanyaan;
-=======
->>>>>>> ec1897091a9baf4dc75f43ce8227196abc4f048c
-    }
-    
-        $pertanyaan = new Pertanyaan;
-    
->>>>>>> 8ebe2c9e62c239deaee34ce7bb73192b087cfc58
+        $pertanyaan->gambar = $namaGambar;
         $pertanyaan->judul = $request->judul;
         $pertanyaan->teks = $request->teks;
         $pertanyaan->kategori_id  = $request->kategori_id;

@@ -16,14 +16,13 @@
 
 <div class="card d-flex">
     <div class="card-header">
-            <a href="/pertanyaan/{{$item->id}}" class="text-primary"><h4>Lihat Pertanyaan ini?, {{Auth::user()->name}}</h4></a>
+            <a href="/pertanyaan/{{$item->id}}" class="text-primary"><h4>{{$item->judul}}</h4></a>
             <span class="badge badge-info">{{$item->kategori->nama}}</span>
         </div>
         <div class="card-body">
             @if ($item->gambar !== null)
-            <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
+            <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px" class="gambar mb-4">
             @endif
-            <h3>{{$item->judul}}</h3>
             <div class="d-flex justify-content-start">
                 <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
                 <a href="/pertanyaan/{{$item->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
