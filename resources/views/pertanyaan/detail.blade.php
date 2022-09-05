@@ -19,10 +19,10 @@
     @if ($pertanyaan->gambar !== null)
             <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
             @endif
-        <h4>{{$pertanyaan->teks}}</h4>
+        <h4>{!!$pertanyaan->teks!!}</h4>
         <div class="d-flex justify-content-start">
-            {{-- <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a> --}}
-            {{-- <a href="/pertanyaan/{{$pertanyaan->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
+             <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
+             <a href="/pertanyaan/{{$pertanyaan->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
             <form action="/pertanyaan/{{$pertanyaan->id}}" method="post">
             @csrf
             @method('delete')
@@ -38,7 +38,7 @@
             <img src="https://robohash.org/stefan-one" class="mr-3" style="border-radius: 50%" width="200px" alt="...">
             <div class="media-body">
                 <h3 class="mt-0 text-primary">{{$item->user->name}}</h3>
-                <p class="text-secondary">{{$item->teks}}</p>
+                <p class="text-secondary">{!!$item->teks!!}</p>
             </div>
         </div>
     @empty

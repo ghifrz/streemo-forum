@@ -11,7 +11,7 @@
 @section('content')
 
 <h1 class="text-info">{{$kategori->nama}}</h1>
-<p style="color: black">{{$kategori->deskripsi}}</p>
+<p style="color: black">{!!$kategori->deskripsi!!}</p>
 
 <h3 class="text-primary mt-5">Lihat Beberapa Pertanyaan Terkait katekgori</h3>
 <div class="row">
