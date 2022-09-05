@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="biodata" class="col-md-4 col-form-label text-md-end">{{ __('biodata') }}</label>
+                            <label for="biodata" class="col-md-4 col-form-label text-md-end">{{ __('Biodata') }}</label>
 
                             <div class="col-md-6">
                                <textarea name="biodata" id="" class="form-control @error('alamat') is-invalid @enderror"></textarea>

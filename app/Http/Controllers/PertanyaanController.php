@@ -69,8 +69,16 @@ class PertanyaanController extends Controller
 
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
+<<<<<<< HEAD
 
         $pertanyaan = new Pertanyaan;
+=======
+    }
+    
+
+        $pertanyaan = new Pertanyaan;
+    
+>>>>>>> 8ebe2c9e62c239deaee34ce7bb73192b087cfc58
         $pertanyaan->judul = $request->judul;
         $pertanyaan->gambar = $namaGambar;
         $pertanyaan->teks = $request->teks;
