@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('navbar')
+    @include('part.navbar')
+@endsection
+
 @section('title')
 <h1 class="text">Detail Kategori</h1>
 @endsection
@@ -7,7 +11,7 @@
 @section('content')
 
 <h1 class="text-info">{{$kategori->nama}}</h1>
-<p style="color: black">{{$kategori->deskripsi}}</p>
+<p style="color: black">{!!$kategori->deskripsi!!}</p>
 
 <h3 class="text-primary mt-5">Lihat Beberapa Pertanyaan Terkait katekgori</h3>
 <div class="row">
@@ -18,7 +22,9 @@
                     <h3 class="text-primary"> {{Auth::user()->name}}</h3>
                 </div>
                     <div class="card-body">
+                    @if ($item->gambar !== null)
                     <img src="{{asset('/images/'.$item->gambar)}}" width=200px height="200px">
+                    @endif
                     <h3>{{$item->judul}}</h3>
                     <div class="d-flex justify-content-start">
                         <a href="/pertanyaan/{{$item->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>

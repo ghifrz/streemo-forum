@@ -17,9 +17,7 @@ use App\Http\Controllers\JawabanController;
 */
 
 // test bot gitlab
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [PertanyaanController::class,'dashboard']);
 
 Route::get('/dashboard',[PertanyaanController::class,'dashboard']);
 
@@ -37,6 +35,10 @@ Route::middleware(['auth'])->group(function () {
 
     // Jawaban/Reply
     Route::post('/jawaban/{pertanyaan_id}', [JawabanController::class, 'tambah']);
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/pertanyaan/{petanyaan_id}', [PertanyaanController::class, 'create','edit','destroy']);
 });
 
 Auth::routes();

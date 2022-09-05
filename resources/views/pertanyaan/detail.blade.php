@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h1 class="text-primary">Detail Pertanyaan</h1>
 @endsection
@@ -12,11 +16,13 @@
         <h3 class="text-primary">{{$pertanyaan->judul}}</h3>
     </div>
     <div class="card-body">
-        <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
-        <h4>{{$pertanyaan->teks}}</h4>
+    @if ($pertanyaan->gambar !== null)
+            <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
+            @endif
+        <h4>{!!$pertanyaan->teks!!}</h4>
         <div class="d-flex justify-content-start">
-            {{-- <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a> --}}
-            {{-- <a href="/pertanyaan/{{$pertanyaan->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
+             <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a>
+             <a href="/pertanyaan/{{$pertanyaan->id}}/edit"><button class="btn btn-info ml-2">Edit Pertanyaan</button></a>
             <form action="/pertanyaan/{{$pertanyaan->id}}" method="post">
             @csrf
             @method('delete')
@@ -32,7 +38,7 @@
             <img src="https://robohash.org/stefan-one" class="mr-3" style="border-radius: 50%" width="200px" alt="...">
             <div class="media-body">
                 <h3 class="mt-0 text-primary">{{$item->user->name}}</h3>
-                <p class="text-secondary">{{$item->teks}}</p>
+                <p class="text-secondary">{!!$item->teks!!}</p>
             </div>
         </div>
     @empty
@@ -50,5 +56,21 @@
     <input type="submit" class="btn btn-primary btn-sm my-4" value="Submit Reply">
 </form>
     <a href="/pertanyaan" class="btn btn-secondary btn-block my-3">Kembali</a>
+
+
+    @push('scripts')
+<script src="https://cdn.tiny.cloud/1/l45o9dvfvfp8cvaxlkw41kp2c6ypw1gdgj04s18y50du4zov/tinymce/6/tinymce.min.js"
+referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
+@endpush
 
 @endsection

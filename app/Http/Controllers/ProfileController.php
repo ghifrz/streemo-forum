@@ -7,14 +7,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Profile;
+use App\Models\Kategori;
 
 class ProfileController extends Controller
 {
     public function index()
     {
         $iduser = Auth::id();
+        $kategori = Kategori::all();
         $profile = Profile::where('users_id', $iduser)->first();
-        return view('profile.update', ['profile' => $profile]);
+        return view('profile.update', ['profile' => $profile,'kategori'=>$kategori]);
     }
 
     public function update(Request $request, $id)

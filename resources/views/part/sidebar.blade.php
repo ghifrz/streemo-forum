@@ -12,11 +12,11 @@
                             <li><a href="/pertanyaan">Lihat Semua Pertanyaan</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan katergori</a>
                                 <ul aria-expanded="false">
-
-
+                            @foreach ($kategori as $item)
+                            <li><a href="/kategori/{{$item->id}}">{{$item->nama}}</a></li>
+                            @endforeach
                                 </ul>
                             </li>
-
                         </ul>
                     </li>
 
