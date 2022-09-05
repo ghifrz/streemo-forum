@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Kategori;
 use App\Models\Pertanyaan;
-use Illuminate\Support\Facades\Auth;
 // use Illuminate\Support\Facades\Auth;
 use File;
 
@@ -66,17 +65,15 @@ class PertanyaanController extends Controller
             'gambar.mimes' => "Gambar Harus Berupa jpg,jpeg,atau png",
             'gambar.max' => "ukuran gambar tidak boleh lebih dari 2048 MB"
         ]);
-
-        if($request->hasFile('gambar')){
+        if($request->has('gambar')){
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
+        $pertanyaan = $namaGambar;
     }
     
-
         $pertanyaan = new Pertanyaan;
     
         $pertanyaan->judul = $request->judul;
-        $pertanyaan->gambar = $namaGambar;
         $pertanyaan->teks = $request->teks;
         $pertanyaan->kategori_id  = $request->kategori_id;
 
