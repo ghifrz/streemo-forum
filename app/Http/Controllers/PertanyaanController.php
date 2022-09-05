@@ -54,7 +54,7 @@ class PertanyaanController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'gambar' => '|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => 'required|mimes:jpg,jpeg,png|max:2048',
             'teks' => 'required',
             'kategori_id'=>'required'
         ],
