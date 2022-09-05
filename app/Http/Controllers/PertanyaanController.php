@@ -70,13 +70,13 @@ class PertanyaanController extends Controller
         if($request->hasFile('gambar')){
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
-        $pertanyaan = $namaGambar;
-        }
-
+    }
+    
 
         $pertanyaan = new Pertanyaan;
-
+    
         $pertanyaan->judul = $request->judul;
+        $pertanyaan->gambar = $namaGambar;
         $pertanyaan->teks = $request->teks;
         $pertanyaan->kategori_id  = $request->kategori_id;
 
