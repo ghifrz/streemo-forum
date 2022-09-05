@@ -13,7 +13,7 @@
 <h1 class="text-info">{{$kategori->nama}}</h1>
 <p style="color: black">{!!$kategori->deskripsi!!}</p>
 
-<h3 class="text-primary mt-5">Lihat Beberapa Pertanyaan Terkait katekgori</h3>
+<h3 class="text-primary mt-5">Lihat Beberapa Pertanyaan Terkait kategori</h3>
 <div class="row">
 
     @forelse ($kategori->pertanyaan as $item)
@@ -44,6 +44,6 @@
     @endforelse
 </div>
 
-<a href="/kategori" class="btn btn-secondary my-2">Kembali</a>
+<a href="/kategori" class="btn btn-secondary btn-block my-2">Kembali</a>
 
 @endsection

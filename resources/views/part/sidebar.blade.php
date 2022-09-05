@@ -10,7 +10,7 @@
                                 class="icon icon-world-2"></i><span class="nav-text">Menu Forum Diskusi</span></a>
                         <ul aria-expanded="false">
                             <li><a href="/pertanyaan">Lihat Semua Pertanyaan</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan katergori</a>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lihat Berdasakan kategori</a>
                                 <ul aria-expanded="false">
                             @foreach ($kategori as $item)
                             <li><a href="/kategori/{{$item->id}}">{{$item->nama}}</a></li>

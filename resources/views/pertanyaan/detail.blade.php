@@ -27,7 +27,7 @@
             @csrf
             @method('delete')
             <input type="submit" value="Hapus Pertanyaan" class="btn btn-danger ml-2">
-            </form> --}}
+            </form>
         </div>
     </div>
 </div>

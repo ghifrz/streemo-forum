@@ -71,7 +71,6 @@ class PertanyaanController extends Controller
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
         $pertanyaan = $namaGambar;
-        
         }
 
 
