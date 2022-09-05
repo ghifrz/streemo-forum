@@ -55,7 +55,7 @@ class PertanyaanController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'gambar' => 'required|mimes:jpg,jpeg,png|max:2048',
+            'gambar' => '|mimes:jpg,jpeg,png|max:2048',
             'teks' => 'required',
             'kategori_id'=>'required'
         ],
@@ -69,18 +69,12 @@ class PertanyaanController extends Controller
 
         $namaGambar = time().'.'.$request->gambar->extension();
         $request->gambar->move(public_path('images'),$namaGambar);
-<<<<<<< HEAD
+
+
 
         $pertanyaan = new Pertanyaan;
-=======
-    }
-    
-
-        $pertanyaan = new Pertanyaan;
-    
->>>>>>> 8ebe2c9e62c239deaee34ce7bb73192b087cfc58
-        $pertanyaan->judul = $request->judul;
         $pertanyaan->gambar = $namaGambar;
+        $pertanyaan->judul = $request->judul;
         $pertanyaan->teks = $request->teks;
         $pertanyaan->kategori_id  = $request->kategori_id;
 
