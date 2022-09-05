@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h2 class="text-primary">Edit Pertanyaan</h2>
 @endsection

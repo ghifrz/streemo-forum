@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h2 class="text-primary">Buat Pertanyaan</h2>
 @endsection
@@ -35,9 +39,10 @@
     @error('kategori_id')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
-
+        <div class="form-group">
         <input type=file name="gambar" oninput="pic.src=window.URL.createObjectURL(this.files[0])">
         <img id="pic" />
+        </div>
     @error('gambar')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror

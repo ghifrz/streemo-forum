@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h1 class="text-primary">Daftar Kategori</h1>
 @endsection
@@ -40,7 +44,7 @@
                     <a href="/kategori/{{$item->id}}" class="btn btn-info btn-sm">Detail</a>
                     <a href="/kategori/{{$item->id}}/edit" class="btn btn-warning btn-sm">Edit</a>
                     <input type="submit" value="Delete" class="btn btn-danger btn-sm">
-                    
+
                 </form>
             </td>
         </tr>

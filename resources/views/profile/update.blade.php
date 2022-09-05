@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h1 class="text-primary">Update Profil</h1>
 @endsection

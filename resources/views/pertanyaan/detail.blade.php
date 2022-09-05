@@ -1,5 +1,9 @@
 @extends('layout.master')
 
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
 @section('title')
 <h1 class="text-primary">Detail Pertanyaan</h1>
 @endsection
@@ -12,7 +16,9 @@
         <h3 class="text-primary">{{$pertanyaan->judul}}</h3>
     </div>
     <div class="card-body">
-        <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
+    @if ($pertanyaan->gambar !== null)
+            <img src="{{asset('/images/'.$pertanyaan->gambar)}}" width=200px height="200px">
+            @endif
         <h4>{{$pertanyaan->teks}}</h4>
         <div class="d-flex justify-content-start">
             {{-- <a href="/pertanyaan/{{$pertanyaan->id}}"><button class="btn btn-primary">Lihat Pertanyaan</button></a> --}}

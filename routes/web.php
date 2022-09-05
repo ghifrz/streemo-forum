@@ -17,9 +17,7 @@ use App\Http\Controllers\JawabanController;
 */
 
 // test bot gitlab
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [PertanyaanController::class,'dashboard']);
 
 Route::get('/dashboard',[PertanyaanController::class,'dashboard']);
 

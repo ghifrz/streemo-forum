@@ -4,6 +4,10 @@
 <h1 class="text-primary">Tanyakan Apapun Disini</h1>
 @endsection
 
+@section('sidebar')
+@include('part.sidebar')
+@endsection
+
 @section('content')
 
 <a href="/pertanyaan/create"><button class="btn btn-secondary ml-3 mb-3">Buat Pertanyaan Baru</button></a>

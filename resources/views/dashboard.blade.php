@@ -1,5 +1,12 @@
 @extends('layout.master')
 
+
+@section('sidebar')
+    @include('part.sidebar')
+@endsection
+
+
+
 @section('title')
 @auth
     <h1 class="text-primary">Selamat Datang, {{Auth::user()->name}}.</h1>
